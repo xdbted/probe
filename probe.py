@@ -10,4 +10,7 @@ with open('text.txt') as f:
         print(q, end="  ", file=result)
         i += 1
 result.close()
-ResultEncode.close()
+with open('result.txt') as r:
+    r = r.read()
+    for g in enumerate(r):
+        print(g, file=ResultEncode)
