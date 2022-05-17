@@ -1,6 +1,5 @@
 result = open('result.txt', 'w')
-ResultEncode = open('result-encode.txt', 'w')
-i = 0
+result_encode = open('result-encode.txt', 'w')
 with open('text.txt') as f:
     text = f.read()
     text2 = [text for text in text.encode('ascii')]
@@ -11,11 +10,6 @@ result.close()
 with open('result.txt') as r:
     tekst = r.readlines(1)
     for tekst1 in tekst:
-        qwe = tekst1
-        qwe = qwe.split()
-        for qwe1 in qwe:
-            qwe2 = qwe1
-            qwe3 = int(qwe2)
-            qwe4 = chr(qwe3)
-            print(qwe4, end="", file=ResultEncode)
-ResultEncode.close()
+        qwe = tekst1.encode('utf-8')
+        print(qwe, end=" ", file=result_encode)
+result_encode.close()
